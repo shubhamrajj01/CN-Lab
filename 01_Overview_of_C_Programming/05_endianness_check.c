@@ -5,58 +5,52 @@ Convert the Endianness of the same i.e. Little to Big Endian and vice-versa
 */
 
 #include <stdio.h>
-#include <stdint.h>
 
-void checkEndianness() {
+void checkEndian() {
     unsigned int x = 1;
-    char *c = (char*)&x;
-    if (*c)
-        printf("The system is Little Endian\n");
-    else
-        printf("The system is Big Endian\n");
+    char *c = (char)&x;
+    if (*c) {
+        printf("Host machine is Little Endian\n");
+    } else {
+        printf("Host machine is Big Endian\n");
+    }
 }
 
-void printBytes(uint64_t num) {
-    unsigned char *ptr = (unsigned char*)&num;
-    printf("Byte representation: ");
+void printBytes(unsigned int num) {
+    unsigned char bytePtr = (unsigned char)&num;
+    printf("Byte content: ");
     for (int i = 0; i < sizeof(num); i++) {
-        printf("%02x ", *(ptr + i));
+        printf("%02x ", bytePtr[i]);
     }
     printf("\n");
 }
 
-uint64_t convertEndianness(uint64_t num) {
-    uint64_t byte0, byte1, byte2, byte3, byte4, byte5, byte6, byte7;
-    byte0 = (num & 0x00000000000000FF) >> 0;
-    byte1 = (num & 0x000000000000FF00) >> 8;
-    byte2 = (num & 0x0000000000FF0000) >> 16;
-    byte3 = (num & 0x00000000FF000000) >> 24;
-    byte4 = (num & 0x000000FF00000000) >> 32;
-    byte5 = (num & 0x0000FF0000000000) >> 40;
-    byte6 = (num & 0x00FF000000000000) >> 48;
-    byte7 = (num & 0xFF00000000000000) >> 56;
-    return (byte0 << 56) | (byte1 << 48) | (byte2 << 40) | (byte3 << 32) | 
-           (byte4 << 24) | (byte5 << 16) | (byte6 << 8) | (byte7 << 0);
+unsigned int convertEndian(unsigned int num) {
+    unsigned int b0, b1, b2, b3;
+    b0 = (num & 0x000000ff) << 24u;
+    b1 = (num & 0x0000ff00) << 8u;
+    b2 = (num & 0x00ff0000) >> 8u;
+    b3 = (num & 0xff000000) >> 24u;
+    return (b0 | b1 | b2 | b3);
 }
 
 int main() {
-    uint64_t num, convertedNum;
+    unsigned int number;
 
-    checkEndianness();
+    checkEndian();
 
     printf("Enter a number: ");
-    scanf("%lu", &num);
+    scanf("%u", &number);
 
-    printf("Original number in bytes:\n");
-    printBytes(num);
+   
+    printf("Original number: %u\n", number);
+    printBytes(number);
 
-    convertedNum = convertEndianness(num);
+    unsigned int convertedNumber = convertEndian(number);
 
-    printf("Converted number in bytes:\n");
-    printBytes(convertedNum);
 
-    printf("Original number: %lu\n", num);
-    printf("Converted number: %lu\n", convertedNum);
+    printf("Converted number: %u\n", convertedNumber);
+    printBytes(convertedNumber);
 
     return 0;
 }

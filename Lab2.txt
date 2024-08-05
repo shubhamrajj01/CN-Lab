@@ -1,0 +1,144 @@
+Certainly! Let's include each question, along with its corresponding answer and explanation for both Windows and Linux where applicable:
+
+1. **Find the IP address of your computer:**
+
+   - **Windows:**
+     - **Question:** How do you find the IP address of your computer on Windows?
+     - **Answer:** Open Command Prompt and type `ipconfig`.
+     - **Explanation:** The `ipconfig` command displays all current TCP/IP network configurations, showing the "IPv4 Address" under the network adapter you are using.
+
+   - **Linux:**
+     - **Question:** How do you find the IP address of your computer on Linux?
+     - **Answer:** Open Terminal and type `ip a` or `ifconfig`.
+     - **Explanation:** The `ip a` or `ifconfig` command provides detailed information about network interfaces and their configurations, including IP addresses.
+
+2. **Send exactly 4 packets of size 100 bytes to www.github.com:**
+
+   - **Windows:**
+     - **Question:** How do you send exactly 4 packets of size 100 bytes to www.github.com on Windows?
+     - **Answer:** Open Command Prompt and type `ping -n 4 -l 100 www.github.com`.
+     - **Explanation:** The `ping` command sends ICMP echo requests. The `-n` option specifies the number of packets, and the `-l` option specifies the size of the packets.
+
+   - **Linux:**
+     - **Question:** How do you send exactly 4 packets of size 100 bytes to www.github.com on Linux?
+     - **Answer:** Open Terminal and type `ping -c 4 -s 100 www.github.com`.
+     - **Explanation:** The `ping` command sends ICMP echo requests. The `-c` option specifies the count, and the `-s` option specifies the packet size.
+
+3. **Run traceroute for www.kiit.ac.in and report observations:**
+
+   - **Windows:**
+     - **Question:** How do you run traceroute for www.kiit.ac.in on Windows?
+     - **Answer:** Open Command Prompt and type `tracert www.kiit.ac.in`.
+     - **Explanation:** The `tracert` command traces the route packets take to the destination, showing each hop along the way.
+
+   - **Linux:**
+     - **Question:** How do you run traceroute for www.kiit.ac.in on Linux?
+     - **Answer:** Open Terminal and type `traceroute www.kiit.ac.in`.
+     - **Explanation:** The `traceroute` command performs the same function as `tracert` in Windows, tracing the packet route.
+
+   - **Force IPv4:**
+     - **Windows:** 
+       - **Question:** How do you force traceroute to use IPv4 on Windows?
+       - **Answer:** Open Command Prompt and type `tracert -4 www.kiit.ac.in`.
+       - **Explanation:** The `-4` option forces the use of IPv4.
+     - **Linux:** 
+       - **Question:** How do you force traceroute to use IPv4 on Linux?
+       - **Answer:** Open Terminal and type `traceroute -4 www.kiit.ac.in`.
+       - **Explanation:** The `-4` option forces the use of IPv4.
+
+   - **Force IPv6:**
+     - **Windows:** 
+       - **Question:** How do you force traceroute to use IPv6 on Windows?
+       - **Answer:** Open Command Prompt and type `tracert -6 www.kiit.ac.in`.
+       - **Explanation:** The `-6` option forces the use of IPv6.
+     - **Linux:** 
+       - **Question:** How do you force traceroute to use IPv6 on Linux?
+       - **Answer:** Open Terminal and type `traceroute -6 www.kiit.ac.in`.
+       - **Explanation:** The `-6` option forces the use of IPv6.
+
+4. **Limit the number of hops to 10 in a traceroute command:**
+
+   - **Windows:**
+     - **Question:** How do you limit the number of hops to 10 in a traceroute command on Windows?
+     - **Answer:** Open Command Prompt and type `tracert -h 10 www.kiit.ac.in`.
+     - **Explanation:** The `-h` option specifies the maximum number of hops.
+
+   - **Linux:**
+     - **Question:** How do you limit the number of hops to 10 in a traceroute command on Linux?
+     - **Answer:** Open Terminal and type `traceroute -m 10 www.kiit.ac.in`.
+     - **Explanation:** The `-m` option specifies the maximum number of hops.
+
+5. **Display statistics for all protocols using the netstat command:**
+
+   - **Windows:**
+     - **Question:** How do you display statistics for all protocols using the netstat command on Windows?
+     - **Answer:** Open Command Prompt and type `netstat -s`.
+     - **Explanation:** The `netstat -s` command displays statistics for all network protocols.
+
+   - **Linux:**
+     - **Question:** How do you display statistics for all protocols using the netstat command on Linux?
+     - **Answer:** Open Terminal and type `netstat -s`.
+     - **Explanation:** The `netstat -s` command shows statistics for all network protocols.
+
+6. **Use nslookup to find the IP Address of www.kiit.ac.in and www.facebook.com:**
+
+   - **Windows:**
+     - **Question:** How do you use nslookup to find the IP Address of www.kiit.ac.in and www.facebook.com on Windows?
+     - **Answer:** Open Command Prompt and type `nslookup www.kiit.ac.in` and `nslookup www.facebook.com`.
+     - **Explanation:** The `nslookup` command queries the DNS to find the IP address of a domain.
+
+   - **Linux:**
+     - **Question:** How do you use nslookup to find the IP Address of www.kiit.ac.in and www.facebook.com on Linux?
+     - **Answer:** Open Terminal and type `nslookup www.kiit.ac.in` and `nslookup www.facebook.com`.
+     - **Explanation:** The `nslookup` command queries the DNS to find the IP address of a domain.
+
+7. **Perform a reverse DNS lookup to find the domain name associated with the IP address 8.8.8.8:**
+
+   - **Windows:**
+     - **Question:** How do you perform a reverse DNS lookup to find the domain name associated with the IP address 8.8.8.8 on Windows?
+     - **Answer:** Open Command Prompt and type `nslookup 8.8.8.8`.
+     - **Explanation:** The `nslookup` command can perform reverse lookups, translating IP addresses to domain names.
+
+   - **Linux:**
+     - **Question:** How do you perform a reverse DNS lookup to find the domain name associated with the IP address 8.8.8.8 on Linux?
+     - **Answer:** Open Terminal and type `nslookup 8.8.8.8`.
+     - **Explanation:** The `nslookup` command can perform reverse lookups, translating IP addresses to domain names.
+
+8. **Use nslookup to query www.example.com using the DNS server at 8.8.8.8:**
+
+   - **Windows:**
+     - **Question:** How do you use nslookup to query www.example.com using the DNS server at 8.8.8.8 on Windows?
+     - **Answer:** Open Command Prompt and type `nslookup www.example.com 8.8.8.8`.
+     - **Explanation:** Specifies a particular DNS server for the query.
+
+   - **Linux:**
+     - **Question:** How do you use nslookup to query www.example.com using the DNS server at 8.8.8.8 on Linux?
+     - **Answer:** Open Terminal and type `nslookup www.example.com 8.8.8.8`.
+     - **Explanation:** Specifies a particular DNS server for the query.
+
+9. **Display all current TCP/IP network configurations using ipconfig:**
+
+   - **Windows:**
+     - **Question:** How do you display all current TCP/IP network configurations using ipconfig on Windows?
+     - **Answer:** Open Command Prompt and type `ipconfig /all`.
+     - **Explanation:** The `ipconfig /all` command displays detailed information about all network adapters.
+
+   - **Linux:**
+     - **Question:** How do you display all current TCP/IP network configurations using ifconfig on Linux?
+     - **Answer:** Open Terminal and type `ifconfig` or `ip a`.
+     - **Explanation:** The `ifconfig` or `ip a` command shows detailed information about all network interfaces.
+
+10. **Release and renew an IP address on a Windows machine using ipconfig:**
+
+    - **Windows:**
+      - **Question:** How do you release and renew an IP address on a Windows machine using ipconfig?
+      - **Answer:** 
+        - Release IP: Open Command Prompt and type `ipconfig /release`.
+        - Renew IP: Open Command Prompt and type `ipconfig /renew`.
+      - **Explanation:** The `ipconfig /release` command releases the current IP address, and the `ipconfig /renew` command requests a new IP address from the DHCP server.
+
+11. **Use iptables to allow all incoming HTTP traffic (port 80):**
+
+    - **Linux:**
+      - **Question:** How do you use iptables to allow all incoming HTTP traffic (port 80) on Linux?
+      - **Answer:** Open Terminal and type `sudo iptables -A INPUT -p tcp
