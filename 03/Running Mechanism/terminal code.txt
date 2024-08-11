@@ -1,0 +1,18 @@
+How to Compile and Run the Programs on Windows
+Compile the Sender and Receiver:
+
+For the sender:
+gcc sender.c -o sender -lws2_32
+
+For the receiver:
+gcc receiver.c -o receiver -lws2_32
+
+The -lws2_32 flag links against the Winsock library, which is necessary for socket programming on Windows.
+
+Run the Receiver:
+Start the receiver program by specifying its own IP address and port.
+./receiver 127.0.0.1 8080
+
+Run the Sender:
+Start the sender program by specifying the receiver's IP address and port.
+./sender 127.0.0.1 8080
