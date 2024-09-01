@@ -8,16 +8,15 @@ Convert the Endianness of the same i.e. Little to Big Endian and vice-versa
 
 void checkEndian() {
     unsigned int x = 1;
-    char *c = (char)&x;
+    unsigned char *c = (unsigned char*)&x;
     if (*c) {
         printf("Host machine is Little Endian\n");
-    } else {
-        printf("Host machine is Big Endian\n");
+    } else {        printf("Host machine is Big Endian\n");
     }
 }
 
 void printBytes(unsigned int num) {
-    unsigned char bytePtr = (unsigned char)&num;
+    unsigned char *bytePtr = (unsigned char*)&num;
     printf("Byte content: ");
     for (int i = 0; i < sizeof(num); i++) {
         printf("%02x ", bytePtr[i]);
