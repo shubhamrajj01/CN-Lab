@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <winsock2.h>  // Use winsock2.h for Windows
+#include <winsock2.h>  
 
 #define BUFFER_SIZE 1024
 
@@ -38,12 +38,12 @@ int main(int argc, char *argv[]) {
     // Filling server information
     servaddr.sin_family = AF_INET;
     servaddr.sin_port = htons(port);
-    servaddr.sin_addr.s_addr = inet_addr(ip);
+    servaddr.sin_addr.s_addr = inet_addr(ip); 
 
     while (1) {
         printf("You: ");
         fgets(buffer, BUFFER_SIZE, stdin);
-        buffer[strcspn(buffer, "\n")] = '\0';  // Remove newline character
+        buffer[strcspn(buffer, "\n")] = '\0'; 
 
         sendto(sockfd, buffer, strlen(buffer), 0, (const struct sockaddr *)&servaddr, sizeof(servaddr));
 
